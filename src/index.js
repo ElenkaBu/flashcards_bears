@@ -7,7 +7,10 @@ const morgan = require('morgan');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+homeRout = require('./routs/routs.home');
+
 // импорт роутов
+app.use('/home', homeRout);
 
 //ф-ии контроллеров
 const { criticalErr, notFoundPage } = require('./controllers/errors');
@@ -25,6 +28,8 @@ app.use(express.urlencoded({ extended: true })); // - это метод для �
 // сюда запрос дойдет, если не сработает ни один роут
 app.use(notFoundPage);
 app.use(criticalErr);
+
+
 
 app.listen(PORT, () => {
   console.log(`Server starting on http://localhost:${PORT}`);
