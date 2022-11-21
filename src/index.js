@@ -9,10 +9,11 @@ const PORT = process.env.PORT || 3000;
 
 homeRout = require('./routs/routs.home');
 gameRout = require('./routs/game.route');
-
+scoreRout = require('./routs/routs.score');
 // импорт роутов
 app.use('/home', homeRout);
 app.use('/games', gameRout);
+app.use('/score', scoreRout);
 
 //ф-ии контроллеров
 const { criticalErr, notFoundPage } = require('./controllers/errors');

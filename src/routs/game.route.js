@@ -15,5 +15,4 @@ route.get('/game', (req, res) => {
     renderTemplate(Game, {}, res);
   });
 
-
 module.exports = route;
