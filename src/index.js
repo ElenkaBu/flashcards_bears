@@ -7,16 +7,12 @@ const morgan = require('morgan');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-homeRout = require('./routs/routs.home');
-gameRout = require('./routs/game.route');
-scoreRout = require('./routs/routs.score');
-// импорт роутов
-app.use('/home', homeRout);
-app.use('/games', gameRout);
-app.use('/score', scoreRout);
-
 //ф-ии контроллеров
 const { criticalErr, notFoundPage } = require('./controllers/errors');
+
+const homeRout = require('./routs/routs.home');
+const gameRout = require('./routs/game.route');
+const scoreRout = require('./routs/routs.score');
 
 // делаем доступной папку public с фронта
 app.use(express.static(path.resolve('public')));
@@ -28,8 +24,16 @@ app.use(morgan('dev'));
 app.use(express.json()); //- это метод, встроенный в express для распознавания входящего объекта запроса как объекта JSON
 app.use(express.urlencoded({ extended: true })); // - это метод для распознавания входящего объекта запроса в виде строк или массивов.
 
+
+// импорт роутов
+app.use('/home', homeRout);
+app.use('/games', gameRout);
+app.use('/score', scoreRout);
+
 // сюда запрос дойдет, если не сработает ни один роут
 app.use(notFoundPage);
+
+
 app.use(criticalErr);
 
 
