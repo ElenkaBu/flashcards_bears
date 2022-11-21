@@ -5,13 +5,13 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Card extends Model {
     static associate(models) {
-      this.belongsTo(models.Deck, { foreignKey: 'card_id' });
+      this.belongsTo(models.Deck, { foreignKey: 'deck_id' });
     }
   }
   Card.init({
     question: DataTypes.TEXT,
     answer: DataTypes.STRING,
-    point: DataTypes.INTEGER,
+    deck_id: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Card',
