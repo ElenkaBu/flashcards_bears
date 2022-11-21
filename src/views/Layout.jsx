@@ -17,7 +17,7 @@ function Layout({ children, classTag }) {
             <a className="nav-link active" href="/home">Home</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">Game</a>
+            <a className="nav-link" href="/games">Game</a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#">Score</a>
