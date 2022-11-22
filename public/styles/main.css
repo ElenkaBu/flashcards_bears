@@ -1,0 +1,59 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color:antiquewhite;
+}
+
+.nav-link {
+    display: flex;
+    justify-content: space-around;
+    color: rgb(78, 17, 17);
+    font-family: 'Franklin Gothic Medium';
+    font-style: oblique;
+    font-size: x-large;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-family: 'Franklin Gothic Medium';
+    font-style: oblique;
+    color: rgb(78, 17, 17);
+}
+
+.btn-primary {
+    position:relative;
+    background-color: rgb(250, 204, 147);
+    font-family: 'Franklin Gothic Medium';
+    font-style: oblique;
+    color: rgb(78, 17, 17);
+}
+
+.mb-3 {
+    font-family: 'Franklin Gothic Medium';
+    font-style: oblique;
+    color: rgb(78, 17, 17);
+}
+
+.card-body {
+    background-color:rgb(233, 193, 141);
+    font-family: 'Franklin Gothic Medium';
+    font-style: oblique;
+    color: rgb(78, 17, 17);
+}
+
+.card-link {
+    font-family: 'Franklin Gothic Medium';
+    font-style: oblique;
+    color: rgb(78, 17, 17);
+}
+
+h2, h3, pre, a {
+    font-family: 'Franklin Gothic Medium';
+    font-style: oblique;
+    color: rgb(78, 17, 17);
+}
+
