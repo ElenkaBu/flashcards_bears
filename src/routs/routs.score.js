@@ -8,6 +8,10 @@ const { User, Round, Deck } = require('../../db/models');
 
 const Score = require('../views/Score');
 
+route.get('/', (req, res) =>
+  res.redirect('/')
+)
+
 route.get('/:id', async (req, res) => {
   const { id } = req.params;
   const user_id = id;
