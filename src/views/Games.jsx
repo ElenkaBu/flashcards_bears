@@ -1,10 +1,10 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-function Games({decks}) {
+function Games({ decks, name }) {
   return (
     <Layout classTag="games">
-      <h1>Выберете игру, Пользователь</h1>
+      <h1>{`Выберете игру, ${name}`}</h1>
       <main className="games" method="POST">
 
         <div className="row">
@@ -13,8 +13,9 @@ function Games({decks}) {
             <div className="col-sm-6">
               <div className="card">
                 <div className="card-body">
+                  <hr />
                   <h5 className="card-title">{deck.title}</h5>
-                  {/* <p className="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
+                 <hr />
                   <a href="/games/game" className="btn btn-primary">Играть!</a>
                 </div>
               </div>
