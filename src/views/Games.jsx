@@ -1,7 +1,7 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-function Games({ decks, name }) {
+function Games({ decks, name, user }) {
   return (
     <Layout classTag="games">
       <h1>{`Выберете игру, ${name}`}</h1>
@@ -15,7 +15,7 @@ function Games({ decks, name }) {
                   <hr />
                   <h5 className="card-title">{deck.title}</h5>
                  <hr />
-                  <a href="/games/game" className="btn btn-primary">Играть!</a>
+                  <a href={`/games/${user.id}/${deck.id}`} className="btn btn-primary">Играть!</a>
                 </div>
               </div>
             </div>
