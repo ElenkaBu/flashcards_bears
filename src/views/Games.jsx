@@ -9,7 +9,6 @@ function Games({ decks, name }) {
 
         <div className="row">
           {decks ? decks.map((deck) => (
-
             <div className="col-sm-6">
               <div className="card">
                 <div className="card-body">
