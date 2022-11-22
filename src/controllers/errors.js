@@ -1,21 +1,20 @@
+const createError = require('http-errors');
 const render = require('../lib/renderTemplate');
 const Error = require('../views/Error');
-const createError = require('http-errors');
-
 
 // catch 404 and forward to error handler
-const notFoundPage= (req, res, next) => {
-  //some logic
+const notFoundPage = (req, res, next) => {
+  // some logic
   console.log('Page not found 404');
   next(createError(404));
 };
 
 // этот мидделвар сработает, если вызвать next() с аргументами, напр. next('error message')
 // critical error handler
-const criticalErr =  (err, req, res, next) => {
+const criticalErr = (err, req, res, next) => {
   // set locals, only providing error in development
   console.log('Error:', err.message);
-  const message = err.message;
+  const { message } = err;
   const error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
@@ -23,4 +22,4 @@ const criticalErr =  (err, req, res, next) => {
   render(Error, { error, message }, res);
 };
 
-module.exports = {criticalErr, notFoundPage}
+module.exports = { criticalErr, notFoundPage };
