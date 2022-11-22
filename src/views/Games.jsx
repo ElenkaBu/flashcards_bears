@@ -4,7 +4,7 @@ const Layout = require('./Layout');
 function Games({ decks, name }) {
   return (
     <Layout classTag="games">
-      <h1>{`Выберете игру, ${name}`}</h1>
+      <h1>{`Выберите игру, ${name}`}</h1>
       <main className="games" method="POST">
 
         <div className="row">
