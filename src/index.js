@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 3000;
 //ф-ии контроллеров
 const { criticalErr, notFoundPage } = require('./controllers/errors');
 
+const welcomeRout = require('./routs/welcome.route');
 const homeRout = require('./routs/routs.home');
 const gameRout = require('./routs/game.route');
 const scoreRout = require('./routs/routs.score');
@@ -26,6 +27,7 @@ app.use(express.urlencoded({ extended: true })); // - это метод для �
 
 
 // импорт роутов
+app.use('/', welcomeRout);
 app.use('/home', homeRout);
 app.use('/games', gameRout);
 app.use('/score', scoreRout);

@@ -20,7 +20,7 @@ route.get('/', async (req, res) => {
 });
 
 route.get('/game', (req, res) => {
-    renderTemplate(Game, {}, res);
-  });
+  renderTemplate(Game, {}, res);
+});
 
 module.exports = route;
